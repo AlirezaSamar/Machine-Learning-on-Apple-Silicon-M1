@@ -3,6 +3,10 @@ Hi folks 👋
 
 This is simply a setup instruction for machine learning required packages, Python and TensorFlow on Apple Metal M1.
 
+You can watch me doing this setup on my YouTube channel.
+
+<a href="#"><img src="https://logos-world.net/wp-content/uploads/2020/04/YouTube-Logo.png" alt="YouTube" width="100"/></a>
+
 The latest Mac ARM M1-based machines have considerably better machine learning support than their previous Intel-based counterparts and yet it is exciting to try some casual ML models using the neural engine in this chip. While most of the CUDA packages architecture is different than the M1, installing ML packages could be a pain at the bottom!
 
 This instruction aims to simply and craft a step-by-step guide to setup using MiniForge.
