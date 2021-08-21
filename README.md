@@ -31,3 +31,61 @@ brew install miniforge
 ```
 MiniForge is based on Anaconda but it emphasize on different CPU architectures such as M1 which is our current concern.
 
+## Install Jupyter
+
+Jupyter notebooks are always handy and good to have, so along with your IDE of your choice, install using the below command:
+```
+conda install -y jupyter
+```
+
+## Some extra libraries
+
+I found at [this file](/tensorflow-apple-metal.yml) authored by [Jeff Heaton](https://github.com/jeffheaton) very useful. It installs some of very handy libraries at once, such as Pandas, SciPy, Matplotlib, etc.
+
+I highly recommend installing them using the .yml file in this repo and run the command below which creates an environment called `tensorflow` and install all the dependencies in the file:
+
+```
+conda env create -f tensorflow-apple-metal.yml -n tensorflow
+```
+Once the setup is done, access to this environment using the following command:
+```
+conda activate tensorflow
+```
+Let's also add Jupyter to this environment:
+```
+conda install nb_conda
+```
+## Register environment
+
+Alright it's time to register our newly created environement to the kernel using this command:
+```
+python -m ipykernel install --user --name tensorflow --display-name "Python 3.9 (tensorflow)"
+```
+🚨 Make sure your environment is activated and you are in (tensorflow).
+
+## Testing the environment¶
+
+Almost there! Let's just make sure everything is setup and works fine! Jump in to a new Jupyter notebook using this command:
+```
+jupyter notebook
+```
+And now paste and run this code to validate your setup:
+```python
+import sys
+
+import tensorflow.keras
+import pandas as pd
+import sklearn as sk
+import tensorflow as tf
+
+print(f"Tensor Flow Version: {tf.__version__}")
+print(f"Keras Version: {tensorflow.keras.__version__}")
+print()
+print(f"Python {sys.version}")
+print(f"Pandas {pd.__version__}")
+print(f"Scikit-Learn {sk.__version__}")
+gpu = len(tf.config.list_physical_devices('GPU'))>0
+print("GPU is", "available" if gpu else "NOT AVAILABLE")
+```
+
+Wa-la! Here is your new glory M1 running latest versions of Machine Learning packages and waiting for you to create awesome stuff.
