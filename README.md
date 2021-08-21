@@ -44,6 +44,8 @@ I found at [this file](/tensorflow-apple-metal.yml) authored by [Jeff Heaton](ht
 
 I highly recommend installing them using the .yml file in this repo and run the command below which creates an environment called `tensorflow` and install all the dependencies in the file:
 
+👉 I do highly recommend installing MiniConda along with MiniForge before proceeding as it helps keeping your PATHs organized.
+
 ```
 conda env create -f tensorflow-apple-metal.yml -n tensorflow
 ```
@@ -51,6 +53,9 @@ Once the setup is done, access to this environment using the following command:
 ```
 conda activate tensorflow
 ```
+🚨 If the above command shows error try `conda info --envs`, copy the path of tensorflow env and use `conda activate /PATH`.
+
+
 Let's also add Jupyter to this environment:
 ```
 conda install nb_conda
