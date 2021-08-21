@@ -3,7 +3,7 @@ Hi folks 👋
 
 This is simply a setup instruction for machine learning required packages, Python and TensorFlow on Apple Metal M1.
 
-You can watch me doing this setup on my YouTube channel.
+You can watch me doing this setup on [my YouTube channel](https://www.youtube.com/channel/UC8P07wtqYd6g_gxbMRuAKwg).
 
 <a href="https://youtu.be/DgHH4HB_UlI"><img src="https://logos-world.net/wp-content/uploads/2020/04/YouTube-Logo.png" alt="YouTube" width="100"/></a>
 
