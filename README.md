@@ -1,11 +1,8 @@
 # Setup Machine Learning on Apple Silicon M1
+
 Hi folks 👋
 
 This is simply a setup instruction for machine learning required packages, Python and TensorFlow on Apple Metal M1.
-
-You can watch me doing this setup on [my YouTube channel](https://www.youtube.com/channel/UC8P07wtqYd6g_gxbMRuAKwg).
-
-<a href="https://youtu.be/DgHH4HB_UlI"><img src="https://logos-world.net/wp-content/uploads/2020/04/YouTube-Logo.png" alt="YouTube" width="100"/></a>
 
 The latest Mac ARM M1-based machines have considerably better machine learning support than their previous Intel-based counterparts and yet it is exciting to try some casual ML models using the neural engine in this chip. While most of the CUDA packages architecture is different than the M1, installing ML packages could be a pain at the bottom!
 
@@ -20,10 +17,15 @@ Homebrew is a package manager for the Mac, kind of similar to `yum` or `apt-get`
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+
+🚨 follow the steps when it finished, requires to echo command.
+
 Now, you need to install the xcode-select command-line utilities. Use the following command to install:
+
 ```
 xcode-select --install
 ```
+
 🚨 If this command didn't work, you should install XCode from the App Store.
 
 ## Install MiniForge
@@ -33,11 +35,13 @@ It's time to put Homebrew to work, let's install MiniForge using Homebrew with t
 ```markdown
 brew install miniforge
 ```
+
 MiniForge is based on Anaconda but it emphasize on different CPU architectures such as M1 which is our current concern.
 
 ## Install Jupyter
 
 Jupyter notebooks are always handy and good to have, so along with your IDE of your choice, install using the below command:
+
 ```
 conda install -y jupyter
 ```
@@ -53,32 +57,41 @@ I highly recommend installing them using the .yml file in this repo and run the 
 ```
 conda env create -f tensorflow-apple-metal.yml -n tensorflow
 ```
+
 Once the setup is done, access to this environment using the following command:
+
 ```
 conda activate tensorflow
 ```
-🚨 If the above command shows error try `conda info --envs`, copy the path of tensorflow env and use `conda activate /PATH`.
 
+🚨 If the above command shows error, try `conda init {SHELL}` such as zsh or bash and run the activate again. If that didn't work too, then try `conda info --envs`, copy the path of tensorflow env and use `conda activate /PATH`.
 
 Let's also add Jupyter to this environment:
+
 ```
 conda install nb_conda
 ```
+
 ## Register environment
 
 Alright it's time to register our newly created environement to the kernel using this command:
+
 ```
 python -m ipykernel install --user --name tensorflow --display-name "Python 3.9 (tensorflow)"
 ```
+
 🚨 Make sure your environment is activated and you are in (tensorflow).
 
 ## Testing the environment¶
 
 Almost there! Let's just make sure everything is setup and works fine! Jump in to a new Jupyter notebook using this command:
+
 ```
 jupyter notebook
 ```
+
 And now paste and run this code to validate your setup:
+
 ```python
 import sys
 
@@ -87,7 +100,7 @@ import pandas as pd
 import sklearn as sk
 import tensorflow as tf
 
-print(f"Tensor Flow Version: {tf.__version__}")
+print(f"TensorFlow Version: {tf.__version__}")
 print(f"Keras Version: {tensorflow.keras.__version__}")
 print()
 print(f"Python {sys.version}")
