@@ -19,6 +19,14 @@ Homebrew is a package manager for the Mac, kind of similar to `yum` or `apt-get`
 ```
 
 🚨 follow the steps when it finished, requires to echo command.
+⚠️ if you faced permission issue:
+```
+sudo chown -R $(whoami) /opt/homebrew /opt/homebrew/share/zsh /opt/homebrew/share/zsh/site-functions /opt/homebrew/var/homebrew/locks
+```
+then:
+```
+chmod u+w /opt/homebrew /opt/homebrew/share/zsh /opt/homebrew/share/zsh/site-functions /opt/homebrew/var/homebrew/locks
+```
 
 Now, you need to install the xcode-select command-line utilities. Use the following command to install:
 
